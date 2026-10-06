@@ -1,0 +1,79 @@
+BTTH4 – Phân tích CPU, RAM, Storage trong mô hình IPO
+Phần 1: Phân tích
+1. Chẩn đoán tình trạng máy bằng Task Manager
+
+- Máy tính có RAM 8GB nhưng đang mở khoảng 20 tab Chrome và chạy VS Code cùng lúc. Em sẽ mở Task Manager -> Performance để kiểm tra CPU và Memory.
+
+- Nếu Memory (RAM) gần 100% nhưng CPU không sử dụng quá cao thì nguyên nhân chính khiến máy đứng hoặc phản hồi chậm là do thiếu RAM.
+
+- Khi RAM bị đầy, Windows sẽ sử dụng Swap file/Page file trên SSD để chứa tạm một phần dữ liệu. Vì SSD chậm hơn RAM nên máy sẽ bị lag, đặc biệt khi chuyển qua lại giữa Chrome và VS Code.
+
+2. CPU, RAM và Storage phối hợp với nhau
+
+Trong mô hình IPO:
+- Input:
+Em mở Chrome, VS Code và các file Python.
+- Process:
+CPU thực hiện việc xử lý. RAM chứa các chương trình và dữ liệu mà CPU đang cần sử dụng. Storage lưu các file và chương trình lâu dài.
+
+- Output:
+Kết quả được hiển thị trên màn hình.
+
+- Có thể hiểu đơn giản:
+
++ CPU giống như người đang làm việc.
++ RAM giống như bàn làm việc, dùng để đặt những thứ đang cần xử lý.
++ Storage giống như ngăn tủ, dùng để cất dữ liệu lâu dài.
+
+- Trong trường hợp này, bàn làm việc (RAM) chỉ có 8GB nhưng có quá nhiều thứ cần đặt lên. Khi bàn hết chỗ, máy phải lấy dữ liệu từ ngăn tủ SSD ra sử dụng nên tốc độ xử lý giảm.
+
+ 3. Vấn đề lưu code trong ổ C:
+
+- Đường dẫn cũ:
+
+C:\Windows\System32\Code của tôi
+
+=> Cách lưu này không phù hợp vì System32 là thư mục hệ thống của Windows. Không nên lưu hoặc chỉnh sửa các file dự án cá nhân tại đây vì có thể gây lỗi hệ thống hoặc gặp vấn đề về quyền truy cập.
+
+=>Em sẽ chuyển dự án sang ổ D: để dễ quản lý và hạn chế ảnh hưởng đến hệ điều hành.
+
+
+Phần 2: Thiết kế cây thư mục mới
+
+- Em thiết kế thư mục trên ổ D: theo nguyên tắc 4 trụ cột gồm:
+
+1. Source – mã nguồn
+2. Documentation – tài liệu
+3. Resources – tài nguyên
+4. Tests – kiểm thử
+
+- Cây thư mục
+
+D:\
+└── ptit-python-project\
+    ├── source\
+    │   ├── main.py
+    │   └── utils.py
+    │
+    ├── documentation\
+    │   └── project-notes.md
+    │
+    ├── resources\
+    │   ├── input-data\
+    │   └── references\
+    │
+    └── tests\
+        └── test-main.py
+-  Naming Convention
+
+Em sử dụng kebab-case cho tên thư mục:
+
+- ptit-python-project
+- input-data
+- project-notes
+
+Các file Python được đặt tên đơn giản như main.py, utils.py, test-main.py.
+
+=> Kết luận
+
+Qua bài này, em hiểu rằng CPU, RAM và Storage có vai trò khác nhau nhưng phối hợp với nhau trong quá trình máy tính hoạt động. Với máy RAM 8GB, việc mở quá nhiều tab Chrome cùng VS Code có thể làm RAM gần đầy và khiến Windows phải dùng Swap file trên SSD, từ đó gây lag. Ngoài ra, code nên được lưu ở ổ D: thay vì thư mục `System32` để an toàn và dễ quản lý hơn.
