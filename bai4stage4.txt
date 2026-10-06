@@ -76,4 +76,4 @@ Các file Python được đặt tên đơn giản như main.py, utils.py, test-
 
 => Kết luận
 
-Qua bài này, em hiểu rằng CPU, RAM và Storage có vai trò khác nhau nhưng phối hợp với nhau trong quá trình máy tính hoạt động. Với máy RAM 8GB, việc mở quá nhiều tab Chrome cùng VS Code có thể làm RAM gần đầy và khiến Windows phải dùng Swap file trên SSD, từ đó gây lag. Ngoài ra, code nên được lưu ở ổ D: thay vì thư mục `System32` để an toàn và dễ quản lý hơn.
+Qua bài này, em hiểu rằng CPU, RAM và Storage có vai trò khác nhau nhưng phối hợp với nhau trong quá trình máy tính hoạt động. Với máy RAM 8GB, việc mở quá nhiều tab Chrome cùng VS Code có thể làm RAM gần đầy và khiến Windows phải dùng Swap file trên SSD, từ đó gây lag. Ngoài ra, code nên được lưu ở ổ D: thay vì thư mục System32 để an toàn và dễ quản lý hơn.
